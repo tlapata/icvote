@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/icvote_backend"
+]
+resolver = "2"
