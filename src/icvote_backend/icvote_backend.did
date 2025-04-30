@@ -1,3 +1,13 @@
+type Proposal = record {
+  id : nat64;
+  title : text;
+  votes_for : nat32;
+  votes_against : nat32;
+};
 service : {
-    "greet": (text) -> (text) query;
+  bye : (text) -> (text) query;
+  create_proposal : (text) -> (nat64);
+  get_proposals : () -> (vec Proposal) query;
+  greet : (text) -> (text) query;
+  vote : (nat64, bool) -> ();
 }
