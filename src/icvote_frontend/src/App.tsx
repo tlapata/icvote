@@ -4,7 +4,9 @@ import { icvote_backend } from '../../declarations/icvote_backend';
 function App() {
   const [greeting, setGreeting] = useState('');
   const [proposalTitle, setProposalTitle] = useState('');
-  const [voteId, setVoteId] = useState<number>(0);
+  const [description, setDescription] = useState('');
+  const [author, setAuthor] = useState<number>(1);
+  const [voteId, setVoteId] = useState<number>(1);
   const [inFavor, setInFavor] = useState<boolean>(true);
   const [proposals, setProposals] = useState<any[]>([]);
 
@@ -19,7 +21,7 @@ function App() {
   async function createProposal(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (proposalTitle.trim() !== "") {
-      const id = await icvote_backend.create_proposal(proposalTitle);
+      const id = await icvote_backend.create_proposal(proposalTitle, description, BigInt(author));
       console.log("Proposal created with ID:", id);
       setProposalTitle(''); // Clear the form
     }
@@ -28,7 +30,7 @@ function App() {
   async function vote(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     await icvote_backend.vote(BigInt(voteId), inFavor);
-    setVoteId(0); // Clear the form
+    setVoteId(1); // Clear the form
   }
 
   async function fetchProposals() {
@@ -60,6 +62,20 @@ function App() {
           type="text" 
           value={proposalTitle} 
           onChange={(e) => setProposalTitle(e.target.value)} 
+          required 
+        />
+        <input 
+          id="description" 
+          type="text" 
+          value={description} 
+          onChange={(e) => setDescription(e.target.value)} 
+          required 
+        />
+        <input 
+          id="author" 
+          type="number" 
+          value={author} 
+          onChange={(e) => setAuthor(Number(e.target.value))} 
           required 
         />
         <button type="submit">Create Proposal</button>
@@ -97,8 +113,8 @@ function App() {
         <ul>
           {proposals.map((proposal, index) => (
             <li key={index}>
-              <strong>{proposal.title}</strong> (ID: {proposal.id}) - 
-              {proposal.votes_for} For / {proposal.votes_against} Against
+              <strong>{proposal.title}</strong> (ID: {proposal.id}):  
+              <p>{proposal.votes_for} For / {proposal.votes_against} Against</p>
             </li>
           ))}
         </ul>

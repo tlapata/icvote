@@ -40,6 +40,14 @@ If you have made changes to your backend canister, you can generate a new candid
 ```bash
 npm run generate
 ```
+With RUST:
+Step 2: Compile the Canister Wasm module
+`cargo build --release --target wasm32-unknown-unknown --package <CANISTER>`
+cargo build --release --target wasm32-unknown-unknown --package icvote_backend
+
+Step 3: Extract candid from the Wasm module and save it to a file:
+`candid-extractor target/wasm32-unknown-unknown/release/<CANISTER>.wasm > <CANISTER>.did`
+candid-extractor target/wasm32-unknown-unknown/release/icvote_backend.wasm > src/icvote_backend/icvote_backend.did
 
 at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
 

@@ -1,12 +1,29 @@
+type ExecutionType = variant { Manual; Automatic };
 type Proposal = record {
   id : nat64;
+  status : ProposalStatus;
   title : text;
+  executed_by : opt text;
+  execution_type : ExecutionType;
+  description : text;
+  author : nat64;
+  timestamp : nat64;
+  category : ProposalCategory;
   votes_for : nat32;
+  quorum : nat32;
   votes_against : nat32;
 };
+type ProposalCategory = variant { Upgrade; Funding; Other; Feature };
+type ProposalStatus = variant {
+  Passed;
+  Open;
+  Rejected;
+  Executed;
+  RejectedDueToNoQuorum;
+};
 service : {
-  bye : (text) -> (text) query;
-  create_proposal : (text) -> (nat64);
+  create_proposal : (text, text, nat64) -> (nat64);
+  get_proposal_deadline : (nat64) -> (nat64) query;
   get_proposals : () -> (vec Proposal) query;
   greet : (text) -> (text) query;
   vote : (nat64, bool) -> ();
