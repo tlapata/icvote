@@ -1,5 +1,10 @@
 import React, { FormEvent, useState } from "react";
 import { icvote_backend } from '../../declarations/icvote_backend';
+import Nav from "./components/layout/header/Nav";
+import Intro from "./components/partial/Intro";
+import AuthModal from "./components/partial/AuthModal";
+import WalletStatus from "./components/partial/WalletStatus";
+
 
 function App() {
   const [greeting, setGreeting] = useState('');
@@ -39,13 +44,14 @@ function App() {
   }
 
   return (
-    <main style={{ padding: 20 }}>
-      <img src="/logo.svg" alt="CryptoMoto" width={300} />
-      <br />
-      <br />
+    <main>
+      <Nav />
+      <Intro />
+      {/*<AuthModal />*/}
+      <WalletStatus />
       
       {/* Greet Form */}
-      <form action="#" onSubmit={handleSubmit}>
+      <form action="#" onSubmit={handleSubmit} style={{width:'50vw', margin: '0 auto'}}>
         <label htmlFor="name">Enter your name: &nbsp;</label>
         <input id="name" alt="Name" type="text" required />
         <button type="submit">Click Me!</button>
@@ -55,7 +61,7 @@ function App() {
       <br />
 
       {/* Create Proposal Form */}
-      <form action="#" onSubmit={createProposal}>
+      <form action="#" onSubmit={createProposal} style={{width:'50vw', margin: '0 auto'}}>
         <label htmlFor="proposalTitle">Proposal Title: &nbsp;</label>
         <input 
           id="proposalTitle" 
@@ -64,6 +70,7 @@ function App() {
           onChange={(e) => setProposalTitle(e.target.value)} 
           required 
         />
+        <label htmlFor="description">Proposal description: &nbsp;</label>
         <input 
           id="description" 
           type="text" 
@@ -84,7 +91,7 @@ function App() {
       <br />
 
       {/* Vote Form */}
-      <form action="#" onSubmit={vote}>
+      <form action="#" onSubmit={vote} style={{width:'50vw', margin: '0 auto'}}>
         <label htmlFor="voteId">Proposal ID: &nbsp;</label>
         <input 
           id="voteId" 

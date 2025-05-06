@@ -1,0 +1,40 @@
+.nav {
+    background-color: var(--bg);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 220px;
+    height: 40px;
+    overflow: hidden;
+}
+.logo img {
+    width: 220px;
+    height: 40px;
+    max-width: 220px;
+}
+@media screen and (max-width: 1024px) {
+    .logo {
+        width: 34px;
+    }
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-weight: bold;
+}
+.menu a {
+    text-decoration: none;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
