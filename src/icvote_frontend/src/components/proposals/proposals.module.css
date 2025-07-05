@@ -1,0 +1,102 @@
+.proposals {
+    padding: 40px 0;
+}
+@media screen and (max-width: 1024px) {
+    .proposals {
+        padding: 30px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.header h2 {
+    margin: 0;
+    padding: 0;
+}
+.overly {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.popup {
+    background-color: white;
+    padding: 32px;
+    border-radius: 8px;
+    width: 640px;
+    max-width: 640px;
+    height: auto;
+    margin: 32px;
+    overflow-y: auto;
+    max-height: calc(100% - 64px);
+    position: relative;
+    z-index: 2;
+}
+.close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: var(--purple);
+    line-height: 10px;
+    height: 32px;
+    width: 32px;
+    box-shadow: none;
+}
+
+.form,
+.form h2 {
+    color: var(--dark);
+}
+.formrow {
+    margin-top: 16px;
+}
+.formrow label {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+    color: var(--text-dark);
+}
+.formrow input,
+.formrow select, 
+.formrow textarea {
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+    -webkit-appearance: none;
+    appearance: none;
+}
+.warning {
+    background-color: rgba(255,251,235,1);
+    border-left: 4px solid rgba(251,191,36,1);
+    padding: 16px;
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    align-items: flex-start;
+    color: rgba(180,83,9,1);
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.warning svg {
+    display: block;
+    height: 28px;
+    width: 28px;
+    fill: rgba(251,191,36,1);
+    margin-top: -2px;
+}

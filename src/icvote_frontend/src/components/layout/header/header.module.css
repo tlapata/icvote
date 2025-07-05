@@ -6,8 +6,26 @@
     justify-content: space-between;
 }
 
-.logo {
+.logo a {
     width: 220px;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    text-transform: uppercase;
+}
+.logo a:hover {
+    color: white;
+}
+.sign {
+    display: block;
+    width: 34px;
     height: 40px;
     overflow: hidden;
 }
@@ -16,9 +34,19 @@
     height: 40px;
     max-width: 220px;
 }
+.logo a span span {
+    color: var(--purple);
+    margin-left: 2px;
+}
 @media screen and (max-width: 1024px) {
     .logo {
         width: 34px;
+    }
+    .logo a span {
+        display: none;
+    }
+    .logo a span.sign {
+        display: block;
     }
 }
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './partial.module.css';
 import WalletIcon from '../icons/Wallet';
 

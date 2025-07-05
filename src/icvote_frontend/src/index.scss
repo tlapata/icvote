@@ -2,14 +2,15 @@
 Content:
   1.0 Variables
   2.0 Common elements
-  3.0 Header
+  3.0 Layout
   4.0 Typography
 */
 
 /* ============================== 1.0 Variables ============================== */
 :root {
   --max-width: 1140px;
-  --border-radius: 4px;
+  --border-radius-button: 4px;
+  --border-radius: 8px;
 
   --bg: #130522;
   --dark: #2A1C38;
@@ -53,6 +54,7 @@ body {
   font-optical-sizing: auto;
   font-family: sans-serif;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 img {
@@ -104,7 +106,7 @@ button,
   background-image: -o-linear-gradient(355deg, var(--purple) 2%, var(--orange) 98%);
   background-image: linear-gradient(85deg, var(--purple) 2%, var(--orange) 98%);
   padding: 10px 20px;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-button);
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
@@ -162,7 +164,11 @@ button.orange:active,
 button.orange.full:hover,
 .button.orange.full:hover,
 button.orange.full:active,
-.button.orange.full:active {
+.button.orange.full:active,
+button.purple:hover,
+button.purple:active,
+.button.purple:hover,
+.button.purple:active {
   background: var(--purple);
   border-color: var(--purple);
   color: white;
@@ -180,8 +186,63 @@ button.orange.full svg,
 button.orange:hover svg,
 button.orange:active svg,
 .button.orange:hover svg,
-.button.orange:active svg {
+.button.orange:active svg,
+button.purple:hover svg,
+.button.purple:active svg {
   fill: white;
+}
+
+button.purple,
+.button.purple {
+  background-color: transparent;
+  background: transparent;
+  border: 1px solid var(--purple);
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+button.purple svg,
+.button.purple svg {
+  height: 16px;
+  width: 16px;
+  fill: var(--purple);
+}
+button.purple.full,
+.button.purple.full {
+  background-color: var(--purple);
+  background: var(--purple);
+  color: white;
+}
+button.purple.full svg,
+.button.purple.full svg {
+  height: 16px;
+  width: 16px;
+  fill: white;
+}
+button.purple.full:hover,
+button.purple.full:active,
+.button.purple.full:hover,
+.button.purple.full:active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+
+
+/* ============================== 3.0 Layout ============================== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.row {
+  display: flex;
+  gap: 20px;
+}
+.row .col-4 {
+  width: calc(25% - 15px);
 }
 
 
@@ -196,6 +257,7 @@ h2 {
   color: white;
   margin: 0;
   padding: 0 0 20px;
+  font-size: 1.75rem;
 }
 h3 {
   color: white;

@@ -1,0 +1,12 @@
+.footer {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 40px 0 20px;
+}
+.copyrights {
+    margin: 20px 0 0;
+    padding: 20px 0 0;
+    text-align: center;
+    border-top: 1px solid var( --text-dark);
+    font-size: 0.875rem;
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './header.module.css';
 import WalletIcon from '../../icons/Wallet';
 
@@ -7,7 +6,10 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
         <div className={styles.logo}>
-            <img src="/logo.svg" alt="IC vote for CryptoMoto" width={220} height={40} />
+            <a href="/">
+                <span className={styles.sign}><img src="/logo.svg" alt="IC vote for CryptoMoto" width={220} height={40} /></span>
+                <span>Moto<span>DAO</span></span>
+            </a>
         </div>
         <div className={styles.menu}>
             <a href="#proposals">Proposals</a>
@@ -15,7 +17,7 @@ const Nav = () => {
             <a href="#about">About</a>
         </div>
         <div className={styles.buttons}>
-            <button id="connectWallet" className="orange">
+            <button id="connectWallet" className="purple">
                 <WalletIcon />
                 <span>Connect Wallet</span>
             </button>

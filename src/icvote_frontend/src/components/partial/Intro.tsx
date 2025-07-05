@@ -11,7 +11,7 @@ const Intro = () => {
             <a href='#proposals' className='button'>
                 Explore Proposals
             </a>
-            <a href='#' className='button orange'>
+            <a href='#' className='button purple'>
                 Learn More
             </a>
         </div>

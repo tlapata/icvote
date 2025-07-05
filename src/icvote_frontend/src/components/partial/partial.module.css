@@ -16,7 +16,8 @@
     padding: 40px 0 0;
 }
 .buttons a {
-    padding: 20px 30px;
+    padding: 16px 30px;
+    border-radius: var(--border-radius);
 }
 
 /* Wallet Status */
@@ -30,7 +31,7 @@
     background-color: white;
     border-radius: var(--border-radius);
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 25px 30px;
     color: var(--text-dark);
 }
 .container h2 {
